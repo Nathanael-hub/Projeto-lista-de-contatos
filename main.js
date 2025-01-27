@@ -12,6 +12,36 @@ form.addEventListener('submit', function(e) {
     atualizaTb();
 })
 
+document.getElementById('NCelr').addEventListener('input',function(e) {
+    let numero = e.target.value.replace("/\D/g,");
+
+    if(numero.length > 2&& numero.length <=6) {
+        numero = `(${numero.substring(0,2)})${numero.substring(2)}`;
+    }else if(numero.length>6) {
+        numero = `(${numero.substring(0,2)})${numero.substring(2,7)}-${numero.substring(7,11)}`;
+    }
+
+    e.target.value=numero;
+});
+
+document.getElementById('NCelr').addEventListener('keypass',function(e) {
+    const apenasNumeros = /[0-9]/;
+
+    if(!apenasNumeros.test(e.key)) {
+    e.preventDefault();
+    }
+
+});
+
+document.getElementById('NCelr').addEventListener('keypass',function(e) {
+    let valor = e.target.value.replace("/\D/g,");
+
+    if(valor.length>11) {
+        valor = valor.substring(0,11);
+    }
+    e.target.value=valor;
+});
+
 
 function maisLinha() {
     const inputNomes = document.getElementById('NomeC');

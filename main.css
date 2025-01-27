@@ -16,11 +16,13 @@ body {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
+    text-align: center;
 }
 
 header {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 header h1 {
@@ -61,6 +63,7 @@ form button{
 
 table {
     width: 100%;
+    margin: 0;
 }
 
 table th {
