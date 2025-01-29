@@ -13,11 +13,11 @@ form.addEventListener('submit', function(e) {
 })
 
 document.getElementById('NCelr').addEventListener('input',function(e) {
-    let numero = e.target.value.replace("/\D/g,");
+    let numero = e.target.value.replace(/\D/g,``);
 
-    if(numero.length > 2&& numero.length <=6) {
+    if(numero.length > 2 && numero.length <=6) {
         numero = `(${numero.substring(0,2)})${numero.substring(2)}`;
-    }else if(numero.length>6) {
+    } else if(numero.length>6) {
         numero = `(${numero.substring(0,2)})${numero.substring(2,7)}-${numero.substring(7,11)}`;
     }
 
@@ -34,7 +34,7 @@ document.getElementById('NCelr').addEventListener('keypass',function(e) {
 });
 
 document.getElementById('NCelr').addEventListener('keypass',function(e) {
-    let valor = e.target.value.replace("/\D/g,");
+    let valor = e.target.value.replace(/\D/g,``);
 
     if(valor.length>11) {
         valor = valor.substring(0,11);
@@ -52,7 +52,7 @@ function maisLinha() {
         alert(`Esse nome: ${inputNomes.value} ja foi inserido`);
     } else {
         Nomes.push(inputNomes.value);
-        Contatos.push(parseFloat(inputContatos.value));
+        Contatos.push(inputContatos.value);
         Emails.push(inputEmails.value);
 
         let linha = '<tr>';
